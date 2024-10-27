@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Amatic+SC" />
+</head>
+<body>
+    <h1>Biblia Fluorecente</h1>
+    <h3>by @aiamcamilo</h3>
+
+    <!-- Form to select the book, chapter, and verse -->
+    <form method="POST" action="/">
+        <div class="form-group">
+            <label for="book"> </label>
+            <select name="book" id="book">
+                {% for book in books %}
+                    {% if book == selected_verse[0] %}
+                        <option value="{{ book }}" selected>{{ book }}</option>
+                    {% else %}
+                        <option value="{{ book }}">{{ book }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="chapter"> </label>
+            <select name="chapter" id="chapter">
+                {% for chapter in chapters %}
+                    {% if chapter == selected_verse[1] %}
+                        <option value="{{ chapter }}" selected>{{ chapter }}</option>
+                    {% else %}
+                        <option value="{{ chapter }}">{{ chapter }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="verse">:</label>
+            <select name="verse" id="verse">
+                {% for verse in verses %}
+                    {% if verse == selected_verse[2] %}
+                        <option value="{{ verse }}" selected>{{ verse }}</option>
+                    {% else %}
+                        <option value="{{ verse }}">{{ verse }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+
+        <button class="verse-select" type="submit">❤</button>
+    </form>
+
+    <div class="card-continer">
+        {% if verse_text %}
+            <div class="card">
+                <span class="highlight"> {{ verse_text }} </span>
+                <p class="address"> — {{ selected_verse[0]}} {{ selected_verse[1] }}:{{ selected_verse[2] }}</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="btm-btn-container">
+        <button class="color-btn1">
+        </button>
+        <button class="color-btn2">
+        </button>
+        <button class="color-btn3">
+        </button>
+    </div>
+
+    <script>
+        const button1 = document.querySelector(".color-btn1");
+        const button2 = document.querySelector(".color-btn2");
+        const button3 = document.querySelector(".color-btn3");
+        const highlight = document.querySelector(".highlight");
+        button1.addEventListener('click',() => {
+                highlight.style.backgroundImage = "linear-gradient(35deg, rgba(18, 194, 233, 0.3), rgba(196, 113, 237, 0.3),rgba(246, 79, 89, 0.3))";
+            });
+        button2.addEventListener('click',() => {
+                highlight.style.backgroundImage = "linear-gradient(35deg, rgba(0, 201, 255, 0.3), rgba(146, 254, 157, 0.3))";
+            });
+        button3.addEventListener('click',() => {
+                highlight.style.backgroundImage = "linear-gradient(35deg, rgba(198, 255, 221, 0.7), rgba(251, 215, 134, 0.3),rgba(247, 121, 125, 0.3)";
+            });
+    </script>
+</body>
+</html>
