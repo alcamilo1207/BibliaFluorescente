@@ -15,7 +15,7 @@ def verse_text(b, c, v):
     # URL of the webpage you want to scrape
     url = "https://www.bibliatodo.com/la-biblia/Reina-valera-1960/{}-{}".format(b,c)
     xpath = "//*[@id=\"info_capitulo\"]/p[{}]/text()".format(v)
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'}
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'}
 
     # Send a GET request to the webpage
     response = requests.get(url, headers=headers)
