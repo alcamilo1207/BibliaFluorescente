@@ -1,7 +1,5 @@
 /* static/css/styles.css */
 body {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     font-family: Arial, sans-serif;
     height: 100vh;
@@ -22,6 +20,7 @@ h3 {
     margin: 0px;
     color: #333;
     text-align: center;
+    font-size: 12px;
 }
 
 form{
@@ -41,11 +40,12 @@ select{
     text-align: center;
 }
 
+/*
 .verse-select{
     margin: 2px;
     border-radius: 12px;
     background-color: #faf0e6;
-}
+}*/
 
 .card-continer{
     display:flex;
@@ -87,7 +87,10 @@ span {
 }
 
 .btm-btn-container{
+    margin: auto;
     display: flex;
+    margin-top: auto;
+    margin-bottom: 30px;
     width: 100%;
     max-width: 400px;
     height: 100px;
