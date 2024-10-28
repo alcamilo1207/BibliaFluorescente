@@ -1,17 +1,11 @@
 import requests
 from lxml import html
+import json
 
-#bibliatodo = {
-#    "books" : ["genesis", "exodo", "leviticos", "numeros", "deuteronomios", "josue", "jueces", "rut",
-#               "1samuel", "2samuel", "1reyes", "2reyes", "1cronicas", "2cronicas", "esdras","nehemias",
-#               "ester", "job", "salmos"]
-#}
+with open("bible.json", 'r') as file:
+    bible = json.load(file)
 
-#b = bibliatodo["books"][book-1]
-#c = chapter
-#v = verse
-
-def verse_text(b, c, v):
+def verse_text_from_web(b, c, v):
     # URL of the webpage you want to scrape
     url = "https://www.bibliatodo.com/la-biblia/Reina-valera-1960/{}-{}".format(b,c)
     xpath = "//*[@id=\"info_capitulo\"]/p[{}]/text()".format(v)
@@ -31,3 +25,16 @@ def verse_text(b, c, v):
         return text[0]
     else:
         return "Element not found or no text available."
+
+def verse_text(b,c,v):
+    return bible[b][str(c)][str(v)]
+
+def get_chapterList(b):
+    return list(bible[b].keys())
+
+def get_verseList(b,c):
+    #Check chapter number
+    if len(bible[b].keys()) < int(c):
+        c = 1
+
+    return list(bible[b][str(c)].keys())
