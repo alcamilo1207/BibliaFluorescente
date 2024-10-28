@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblia Fluorescente @aiamcamilo</title>
+    <title>Biblia Fluorescente</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Amatic+SC" />
 </head>
@@ -15,7 +15,7 @@
     <form method="POST" action="/">
         <div class="form-group">
             <label for="book"> </label>
-            <select name="book" id="book">
+            <select name="book" id="book" onchange="this.form.submit()">
                 {% for book in books %}
                     {% if book == selected_verse[0] %}
                         <option value="{{ book }}" selected>{{ book }}</option>
@@ -28,7 +28,7 @@
 
         <div class="form-group">
             <label for="chapter"> </label>
-            <select name="chapter" id="chapter">
+            <select name="chapter" id="chapter" onchange="this.form.submit()">
                 {% for chapter in chapters %}
                     {% if chapter == selected_verse[1] %}
                         <option value="{{ chapter }}" selected>{{ chapter }}</option>
@@ -41,7 +41,7 @@
 
         <div class="form-group">
             <label for="verse">:</label>
-            <select name="verse" id="verse">
+            <select name="verse" id="verse" onchange="this.form.submit()">
                 {% for verse in verses %}
                     {% if verse == selected_verse[2] %}
                         <option value="{{ verse }}" selected>{{ verse }}</option>
@@ -52,7 +52,7 @@
             </select>
         </div>
 
-        <button class="verse-select" type="submit">❤</button>
+        <!-- <button class="verse-select" type="submit">❤</button> -->
     </form>
 
     <div class="card-continer">
