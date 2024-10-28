@@ -34,7 +34,7 @@ def hello():
 
     book_names = ["Génesis", "Éxodo", "Levítico", "Números","Deuteronomio","Josué","Jueces","Rut","1 Samuel",
                   "2 Samuel","1 Reyes","2 Reyes","1 Crónicas","2 Crónicas","Esdrás","Nehemías","Ester",
-                  "Job","Salmos","Proverbios","Eclesiastés","Cantares","Isaías","Jeremías","Lamentaciones"
+                  "Job","Salmos","Proverbios","Eclesiastés","Cantares","Isaías","Jeremías","Lamentaciones",
                   "Ezequiel","Daniel","Oseas","Joel","Amós","Abdías","Jonás","Miqueas","Nahum", "Habacuc","Sofonías",
                   "Hageo", "Zacarías", "Malaquías"]
 
