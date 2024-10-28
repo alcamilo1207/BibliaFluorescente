@@ -73,10 +73,11 @@ span {
 }
 
 .highlight {
-     box-decoration-break: clone;
+     /*box-decoration-break: clone;
      border-radius: 7px;
+     padding:  2px 7px 2px 7px;*/
      background-image: linear-gradient(35deg, rgba(18, 194, 233, 0.3), rgba(196, 113, 237, 0.3),rgba(246, 79, 89, 0.3));
-     padding:  2px 7px 2px 7px;
+     padding:  2px 0 2px 0;
 }
 
 .address{
